@@ -42,7 +42,7 @@ function reconstructSpecifiers(
     | babelTypes.ImportDefaultSpecifier
     | babelTypes.ImportNamespaceSpecifier
     | babelTypes.ImportSpecifier
-  )[]
+  )[],
 ) {
   if (!specs || !specs.length) {
     return '';
@@ -81,6 +81,7 @@ function reconstructSpecifiers(
 
 function reconstruct(node: babelTypes.Node) {
   let v = generate(node, { comments: false }).code.replace(/\n/g, '');
+
   let v2;
 
   while (true) {
